@@ -1,1 +1,23 @@
-<p>game-page works!</p>
+<div class="game_page">
+    <div class="game_info">
+        <img src={{game?.info?.thumb}}>
+        <h2>{{game?.info?.title}}</h2>
+        <h4> Precio: {{game?.cheapestPriceEver?.price}}</h4>
+    </div>
+    <table>
+        <thead>
+          <tr>
+            <th>Precio</th>
+            <th>Precio minorista</th>
+            <th>Ahorros</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let deals of game?.deals">
+            <td>{{ deals?.price }}</td>
+            <td>{{ deals?.retailPrice }}</td>
+            <td>{{ deals?.savings }}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>

@@ -1,4 +1,9 @@
 <app-header></app-header>
-<div>
-    
+<div class="home">
+    <h3>Todos los juegos </h3>
+    <div class="list_games">
+        <div class="game" *ngFor="let game of games">
+            <app-game [game]="game"></app-game>
+        </div>
+    </div>
 </div>

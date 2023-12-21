@@ -1,3 +1,91 @@
-header{
-    margin-top: 10px;
+@use '../../styles/funtions';
+@import '../../styles/colors';
+
+header {
+    background-color: $base-color;
+    color: $red;
+    display: flex;
+    height: 40px;
+    box-shadow: 0px 5px 50px rgba(7, 7, 7, 0.397);
+
+    .logo {
+        background-color: $red;
+        width: 20%;
+        height: 70px;
+        margin-left: 5px;
+        border-radius: 0px 0px 10px 10px;
+        align-items: center;
+        display: flex;
+
+        img {
+            width: 70%;
+            margin: 0 auto;
+        }
+    }
+
+    nav {
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        margin-right: 8px;
+
+        .search {
+            background-color: $base-color;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+
+            i {
+                margin-left: 8px;
+                color: $red;
+                position: absolute;
+                display: block;
+            }
+
+            &_input {
+                flex: 1;
+                padding: 2px 38px;
+                color: $red;
+                border: 0.5px solid $gris;
+                border-radius: 5px;
+
+            }
+        }
+
+        .link_nav {
+            @include funtions.center;
+            align-self: center;
+
+            i {
+                align-self: center;
+            }
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        height: 60px;
+
+        .logo {
+            width: 30%;
+            height: 110px;
+            margin-left: 20px;
+            margin-right: 10%;
+
+            img {
+                width: 40%;
+            }
+        }
+
+        nav {
+
+            margin-right: 20px;
+
+            i {
+                align-self: center;
+            }
+
+        }
+    }
+
+
 }
