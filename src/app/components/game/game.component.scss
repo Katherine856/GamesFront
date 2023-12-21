@@ -1,8 +1,7 @@
-
 @use '../../styles/funtions';
 @import '../../styles/colors';
 
-.conteiner{
+.conteiner { // Estilos cada tarjeta de juego
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 10px;
@@ -10,34 +9,27 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); //Borde difuninado
 
-    img{
+    img {
         height: 100px;
-        margin: 0 auto;
-        display: flex;
+        @include funtions.center;
     }
 
-    button{
-        background-color: $secondary-color;
-        color: $base-color;
-        height: 30px;
-        width: 50%;
-        align-items: center;
-        border: none;
-        border-radius: 10px;
-        text-align: center;
+    button {
+        @include funtions.buttonGeneral(50%, 30px);
     }
 
     @media screen and (min-width: 768px) {
         height: 250px;
-        img{
+
+        img {
             width: 100%;
             max-height: 130px;
         }
 
-        button{
-            width: 70%;
+        button {
+            @include funtions.buttonGeneral(70%, 30px);
         }
     }
 

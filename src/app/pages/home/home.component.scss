@@ -1,17 +1,17 @@
 
 @import '../../styles/colors';
 
-.home{
+.home{ //Estilos de la página de inicio
     width: 90%;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; //Una sola columna para movil
     margin: 20px auto;
 
     @media screen and (min-width: 768px) {
         margin: 50px auto;
         .list_games{
             display: grid;
-            grid-template-columns: 25% 25% 25% 25%;
+            grid-template-columns: 25% 25% 25% 25%; //Cuatro columnas para computador
             .game{
                 padding: 10px;
             }

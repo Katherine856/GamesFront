@@ -1,3 +1,5 @@
+//Interface que nos permite modelar las ofertas
+
 export interface Deals{
     storeID: number;
     dealID: string,

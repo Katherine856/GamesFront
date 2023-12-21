@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
+import { HostListener} from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -9,9 +9,13 @@ import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
 export class HeaderComponent {
 
   isResponsive: boolean=false;
+  search: string = '';
 
-  constructor(private el: ElementRef, private renderer: Renderer2) {}
+  @Output() stringEnviado = new EventEmitter<string>(); //Se declara el envio del valor del input de busqueda
 
+  constructor() {}
+
+  //Nos permite capturar el tamaño de la pantalla
   @HostListener('window:resize', ['$event'])
   onResize(event: Event) {
     this.checkWidth();
@@ -21,11 +25,23 @@ export class HeaderComponent {
     this.checkWidth();
   }
 
+  //Verificar el tamaño actual de la pantalla
   private checkWidth() {
     const screenWidth = window.innerWidth;
 
-    // Puedes ajustar el valor de 768 según tu definición de "responsive"
+    // Definimos el valor de la pantalla en reponsive
     this.isResponsive = screenWidth <= 768;
-
   }
+
+  // Accede al valor del input utilizando el evento
+  onInputChange(event: Event){
+    this.search = (event.target as HTMLInputElement).value;
+    this.emitirString();
+  }
+
+  // Enviar el valor del input al home
+  emitirString(){
+    this.stringEnviado.emit(this.search);
+  }
+  
 }

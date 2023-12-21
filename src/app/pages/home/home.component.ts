@@ -14,19 +14,18 @@ export class HomeComponent {
   constructor(private service: ServiceService){ }
 
   ngOnInit(): void {
-  
-    this.service.getGames().subscribe(data => {
-      console.log(data);
-    })
-
-    this.getGames();
-
+    this.getGames('');
   }
 
   //Método que trae los juegos por el nombre
-  getGames() {
-    this.service.getGames().subscribe(data => {
+  getGames(fetchGame: string) {
+    this.service.getGames(fetchGame).subscribe(data => {
       this.games = data;
     })
+  }
+
+  //Recupermaos el valor del input del componente header
+  search(fetchGame: string){
+    this.getGames(fetchGame);
   }
 }

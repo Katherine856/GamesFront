@@ -1,9 +1,12 @@
-<app-header></app-header>
+<app-header (stringEnviado)="search($event)"></app-header>
 <div class="home">
-    <h3>Todos los juegos </h3>
-    <div class="list_games">
+    <h3 >Todos los juegos </h3>
+    <div *ngIf="games" class="list_games">
         <div class="game" *ngFor="let game of games">
             <app-game [game]="game"></app-game>
         </div>
+    </div>
+    <div *ngIf="games?.length==0">
+        <h1> Debes realizar una búsqueda </h1>
     </div>
 </div>

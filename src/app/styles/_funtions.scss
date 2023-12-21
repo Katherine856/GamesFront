@@ -1,6 +1,19 @@
 @use './colors';
 
-@mixin center{
+//Funcion para centar un elemento
+@mixin center {
     margin: 0 auto;
     display: flex;
+}
+
+//Función para darle estilos a los botones
+@mixin buttonGeneral ($width, $height){
+    background-color: colors.$secondary-color;
+    color: colors.$base-color;
+    height: $height;
+    width: $width;
+    align-items: center;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
 }
