@@ -24,6 +24,7 @@ header { //Estilos del header
     }
 
     nav { // Opciones del header
+
         width: 80%;
         display: flex;
         margin-right: 8px;
@@ -83,6 +84,7 @@ header { //Estilos del header
         nav {
 
             margin-right: 20px;
+            justify-content: right;
 
             i {
                 align-self: center;
