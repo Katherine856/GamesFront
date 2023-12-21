@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ServiceService } from 'src/app/service/service.service';
 import { Router } from '@angular/router';
+import { GameInfo } from 'src/app/tools/models/GameInfo';
 
 @Component({
   selector: 'app-game-page',
@@ -10,8 +11,8 @@ import { Router } from '@angular/router';
 })
 export class GamePageComponent {
 
-  idGame: any; //Id del juego
-  game: any; //Información del juego
+  idGame: number | any; //Id del juego
+  game?: GameInfo; //Información del juego
 
   constructor(private activateRoute: ActivatedRoute, private service: ServiceService, private router: Router){}
 

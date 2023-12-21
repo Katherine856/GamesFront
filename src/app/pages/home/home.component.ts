@@ -9,7 +9,7 @@ import { Game } from 'src/app/tools/models/Game';
 })
 export class HomeComponent {
 
-  games: any;
+  games: Game[] = [];
 
   constructor(private service: ServiceService){ }
 

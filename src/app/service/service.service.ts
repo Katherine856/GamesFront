@@ -15,8 +15,8 @@ export class ServiceService {
   constructor( private httpClient: HttpClient ) { }
 
   //Método que permite traer todos los juegos por titulo
-  getGames(fetchGame: string): Observable<Game> {
-    return this.httpClient.get<Game>(this.url + `games?title=${fetchGame}&limit=10`);
+  getGames(fetchGame: string): Observable<Game[]> {
+    return this.httpClient.get<Game[]>(this.url + `games?title=${fetchGame}&limit=10`);
   }
 
   //Método que permite traer un juego por su id
