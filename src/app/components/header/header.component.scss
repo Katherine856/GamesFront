@@ -2,6 +2,7 @@
 @import '../../styles/colors';
 
 header { //Estilos del header
+    width: 100%;
     background-color: $base-color;
     color: $red;
     display: flex;
@@ -25,9 +26,11 @@ header { //Estilos del header
 
     nav { // Opciones del header
 
-        width: 80%;
+       
         display: flex;
         margin-right: 8px;
+        background-color: $base-color;
+        justify-content: right;
 
         .search { // Barra de búsqueda
             background-color: $base-color;
@@ -43,7 +46,7 @@ header { //Estilos del header
             }
 
             &_input {
-                padding: 2px 38px;
+                padding: 2px 2px 2px 38px;
                 color: $red;
                 border: 0.5px solid $gris;
                 border-radius: 5px;
@@ -57,7 +60,7 @@ header { //Estilos del header
             .link_nav {
                 @include funtions.center;
                 align-self: center;
-                padding: 0px 10px;
+                height: 40px;
                 
                 i {
                     align-self: center;
@@ -84,10 +87,33 @@ header { //Estilos del header
         nav {
 
             margin-right: 20px;
-            justify-content: right;
+            width: 80%;
+            
 
-            i {
-                align-self: center;
+            .search{
+                i {
+                    align-self: center;
+    
+                }
+            }
+
+            a{
+                text-decoration: none;
+                color: $red;
+                display: flex;
+                align-items: center;
+                .link_nav {
+                    
+                    padding: 6px;
+
+                    h4{
+                        align-self: center;
+                    }
+                    
+                    i {
+                        padding: 10px;
+                    }
+                }
             }
 
         }
