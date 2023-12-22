@@ -63,6 +63,10 @@ header { //Estilos del header
                 @include funtions.center;
                 align-self: center;
                 height: 40px;
+
+                h4{
+                    display: none;
+                }
                 
                 i {
                     align-self: center;
@@ -109,6 +113,7 @@ header { //Estilos del header
 
                     h4{
                         align-self: center;
+                        display: block;
                         width: 100px;
                     }
                     
